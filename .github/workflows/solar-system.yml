@@ -56,7 +56,10 @@ jobs:
     
     dev-deploy:
       runs-on: ubuntu-latest
-      environment: development
+      needs: 
+        - docker
+      environment: 
+        name: development
       steps:
       - name: Installation Kubernetes
         uses: helm/kind-action@v1
